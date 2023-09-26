@@ -7,7 +7,7 @@ const MainPage = () => {
   return (
     <>
       <Main>
-        <DangerEvent />
+        {/* <DangerEvent /> */}
       </Main>
     </>
     
@@ -17,6 +17,22 @@ const MainPage = () => {
 const Main = styled.div`
   width: 100%;
   height: 93vh;
+  width: 100%;
+    height: 100vh;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(${Background});
+      background-position: center;
+      filter: blur(5px) brightness(75%);
+    }
 `
 
 
