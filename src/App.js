@@ -4,6 +4,7 @@ import MainPage from './Components/MainPage';
 import Background from './Img/1-3.png'
 import { Route, Routes } from 'react-router';
 import SignUp from './Components/SignUp';
+import SignIn from './Components/SignIn';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
     <GlobalStyle />
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="Signup" element={<SignUp />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/signin" element={<SignIn />} />
     </Routes>
     </>     
   );

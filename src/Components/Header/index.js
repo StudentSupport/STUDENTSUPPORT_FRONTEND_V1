@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <Header_layout>
       <All_Login>
-        <L_Button>로그인</L_Button>
-        <L_Button to='/Signup'>회원가입</L_Button>
+        <L_Button to='/signin'>로그인</L_Button>
+        <L_Button to='/signup'>회원가입</L_Button>
       </All_Login>
     </Header_layout>
   );
