@@ -23,14 +23,24 @@ const SignUp = () => {
     "password":formData.pw,
   })
   .then((response) => {
-    console.log(response.data);
+    console.log(response.data)
+    setFormData(prevState => ({
+      ...prevState,
+      number: '',
+      name: '',
+      pw: '',
+    }));
   }).catch((error) => {
     console.log('failed')
+    alert('회원가입에 실패하였습니다.')
   })
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
   }
   return (
     <SignupPage>
-      <SignupForm>
+      <SignupForm onSubmit={handleSubmit}>
         <div>
           <h1>회원가입</h1>
         </div>
@@ -40,18 +50,21 @@ const SignUp = () => {
             value={formData.number}
             onChange={handleChange}
             placeholder='Student Number'
+            required
             />
           <Input 
             name='name'
             value={formData.name}
             onChange={handleChange}
             placeholder='Name'
+            required
             />
           <Input 
           name='pw'
           value={formData.pw}
           onChange={handleChange}
           placeholder='Password'
+          required
           />
         <Submit onClick={formSend}>제출</Submit>
         </InputDiv>
