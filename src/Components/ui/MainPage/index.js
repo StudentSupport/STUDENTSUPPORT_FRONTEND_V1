@@ -1,13 +1,13 @@
 import React from 'react';
-import {styled, keyframes} from 'styled-components';
-import Background from '../../Img/1-3.png'
+import {styled} from 'styled-components';
+import Background from '../../../assets/1-3.png'
 import DangerEvent from './DangerEvent';
 
 const MainPage = () => {
   return (
     <>
       <Main>
-        {/* <DangerEvent /> */}
+        <DangerEvent />
       </Main>
     </>
     

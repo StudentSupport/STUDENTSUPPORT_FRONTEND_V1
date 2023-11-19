@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const SignUp = () => {
-
   const [formData,setFormData] = useState({
     number:'',
     name:'',
@@ -17,10 +16,10 @@ const SignUp = () => {
     });
   };
   const formSend = () => {
-    axios.post('https://student.bssm.kro.kr/signup', {
+    axios.post('https://port-0-studentsupport-backend-v1-euegqv2bln1rgmv8.sel5.cloudtype.app/signup', {
     "name":formData.name,
     "stunum":formData.number,
-    "password":formData.pw,
+    "password":formData.pw
   })
   .then((response) => {
     console.log(response.data)
@@ -33,8 +32,8 @@ const SignUp = () => {
   }).catch((error) => {
     console.log('failed')
     alert('회원가입에 실패하였습니다.')
-  })
-  }
+  })}
+  console.log(formData)
   const handleSubmit = (e) => {
     e.preventDefault()
   }
@@ -50,21 +49,18 @@ const SignUp = () => {
             value={formData.number}
             onChange={handleChange}
             placeholder='Student Number'
-            required
             />
           <Input 
             name='name'
             value={formData.name}
             onChange={handleChange}
             placeholder='Name'
-            required
             />
           <Input 
           name='pw'
           value={formData.pw}
           onChange={handleChange}
           placeholder='Password'
-          required
           />
         <Submit onClick={formSend}>제출</Submit>
         </InputDiv>

@@ -1,10 +1,9 @@
-import {styled, createGlobalStyle} from 'styled-components';
-import Header from './Components/Header';
-import MainPage from './Components/MainPage';
-import Background from './Img/1-3.png'
+import { createGlobalStyle } from 'styled-components';
+import Header from './Components/common/Header';
+import MainPage from './Components/ui/MainPage';
 import { Route, Routes } from 'react-router';
-import SignUp from './Components/SignUp';
-import SignIn from './Components/SignIn';
+import SignUp from './Components/ui/SignUp';
+import SignIn from './Components/ui/SignIn';
 
 function App() {
   return (
