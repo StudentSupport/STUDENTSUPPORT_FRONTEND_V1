@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 
-const Header = () => {
+const Header = ({toggleSignUp}) => {
   return (
     <Header_layout>
       <All_Login>
@@ -11,8 +11,8 @@ const Header = () => {
         <Main_Button>게시판</Main_Button>
       </All_Login>
       <All_Login>
-        <L_Button to='/signin'>로그인</L_Button>
-        <L_Button to='/signup'>회원가입</L_Button>
+        <L_Button>로그인</L_Button>
+        <L_Button onClick={toggleSignUp}>회원가입</L_Button>
       </All_Login>
     </Header_layout>
   );
@@ -25,6 +25,8 @@ const Header_layout = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 9999;
 `
 const Main_Button = styled(Link)`
   display: flex;
@@ -42,11 +44,10 @@ const Main_Button = styled(Link)`
     background-color: #E6E6E6;
   }
 `
-const L_Button = styled(Link)`
+const L_Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration-line: none;
   border: none;
   background-color: #FFFFFF;
   width: 80px;

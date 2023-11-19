@@ -2,12 +2,14 @@ import React from 'react';
 import {styled} from 'styled-components';
 import Background from '../../../assets/1-3.png'
 import DangerEvent from './DangerEvent';
+import SignUp from '../SignUp';
 
-const MainPage = () => {
+const MainPage = ({showSignUp,setShowSignUp}) => {
   return (
     <>
       <Main>
         <DangerEvent />
+        {showSignUp && <SignUp setShowSignUp={setShowSignUp} showSignUp={showSignUp} />}
       </Main>
     </>
     
@@ -15,11 +17,10 @@ const MainPage = () => {
 };
 
 const Main = styled.div`
+  transform: scale(1.02);
   width: 100%;
-  height: 93vh;
-  width: 100%;
-    height: 100vh;
-    position: relative;
+  height: 100vh;
+  position: fixed;
     &::before {
       content: "";
       position: absolute;

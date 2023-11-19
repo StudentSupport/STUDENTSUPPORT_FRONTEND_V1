@@ -14,23 +14,23 @@ const DangerEvent = () => {
 
 };
 const DangerEvent_layout = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 15vh;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  margin-top: 7vh;
 `
 const DangerEvent_bar = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 95%;
-height: 50%;
-background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 50%;
+  background-color: #ffffff;
 `
 const DangerEvent_font = styled.p`
-font-size: 40px;
+  font-size: 40px;
 `
 
 export default DangerEvent;
