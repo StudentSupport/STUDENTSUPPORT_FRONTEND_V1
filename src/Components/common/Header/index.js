@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 
-const Header = ({toggleSignUp}) => {
+const Header = ({toggleSignUp,toggleSignIn}) => {
   return (
     <Header_layout>
       <All_Login>
@@ -11,7 +11,7 @@ const Header = ({toggleSignUp}) => {
         <Main_Button>게시판</Main_Button>
       </All_Login>
       <All_Login>
-        <L_Button>로그인</L_Button>
+      <L_Button onClick={toggleSignIn}>로그인</L_Button>
         <L_Button onClick={toggleSignUp}>회원가입</L_Button>
       </All_Login>
     </Header_layout>

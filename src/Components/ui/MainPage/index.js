@@ -3,13 +3,15 @@ import {styled} from 'styled-components';
 import Background from '../../../assets/1-3.png'
 import DangerEvent from './DangerEvent';
 import SignUp from '../SignUp';
+import SignIn from '../SignIn';
 
-const MainPage = ({showSignUp,setShowSignUp}) => {
+const MainPage = ({showSignUp,setShowSignUp,showSignIn,setShowSignIn}) => {
   return (
     <>
       <Main>
         <DangerEvent />
         {showSignUp && <SignUp setShowSignUp={setShowSignUp} showSignUp={showSignUp} />}
+        {showSignIn && <SignIn setShowSignIn={setShowSignIn} />}
       </Main>
     </>
     

@@ -1,20 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SignIn = () => {
+const SignIn = ({setShowSignIn}) => {
   return (
     <SigninPage>
-      <SigninForm>
-        <h1>로그인</h1>
-        <InputDiv>
-          <Input 
-          placeholder='Student Number'
-          />
-          <Input 
-          placeholder='Password'
-          />
-          <Submit>제출</Submit>
-        </InputDiv>
+      <SigninForm onSubmit={(e) => e.preventDefault()}>
+      <Exit onClick={() => setShowSignIn(false)} >X</Exit>
+      <Title>구글로 로그인</Title>
       </SigninForm>
     </SigninPage>
   );
@@ -22,44 +14,33 @@ const SignIn = () => {
 
 const SigninPage = styled.div`
   width: 100%;
-  height: 93vh;
-  background: linear-gradient(to top, #FFFFFF, #7258FA);
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
 `
 const SigninForm = styled.form`
   width: 400px;
-  height: 500px;
+  height: 200px;
   background-color: white;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  position: relative;
 `
-const InputDiv = styled.div`
-  height: 70%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const Exit = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `
-const Input = styled.input`
-  width: 85%;
-  height: 15%;
-  margin-bottom: 20px;
-`
-const Submit = styled.button`
-  width: 95%;
-  height: 13%;
-  background-color: #8258FA;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  &:hover {
-    background-color: #642EFE;
-  }
+const Title = styled.h2`
+
 `
 
 export default SignIn;

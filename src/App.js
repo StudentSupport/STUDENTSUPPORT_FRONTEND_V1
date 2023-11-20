@@ -6,12 +6,27 @@ import { useState} from 'react'
 
 function App() {
   const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+
+  const toggleSignUp = () => {
+    setShowSignUp(!showSignUp);
+  }
+
+  const toggleSignIn = () => {
+    setShowSignIn(!showSignIn);
+  }
+
   return (
     <>
-      <Header toggleSignUp={() => setShowSignUp(!showSignUp)} />
+      <Header toggleSignUp={toggleSignUp} toggleSignIn={toggleSignIn} />
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<MainPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} />
+        <Route path="/" element={<MainPage 
+        showSignUp={showSignUp} 
+        setShowSignUp={setShowSignUp} 
+        showSignIn={showSignIn}
+        setShowSignIn={setShowSignIn}
+        />} />
       </Routes>
     </>     
   );
